@@ -1,0 +1,204 @@
+/* Importando fonte */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #121212;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: #1f1f1f;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #00aaff;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #00aaff;
+}
+
+/* SEÇÕES */
+section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #00aaff;
+    margin-bottom: 40px;
+}
+
+/* SOBRE MIM */
+.sobre .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 30px;
+    text-align: left;
+    margin-top: 80px;
+}
+
+.sobre .foto-perfil {
+    width: 250px;
+    border-radius: 10px;
+    border: 3px solid #00aaff;
+}
+
+.sobre .texto h1 {
+    font-size: 2rem;
+    color: #00aaff;
+}
+
+.sobre .texto p {
+    font-size: 1.1rem;
+    color: #cccccc;
+    max-width: 600px;
+}
+
+/* HABILIDADES */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.skill {
+    background: #1f1f1f;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid #00aaff;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.skill:hover {
+    background: #00aaff;
+    color: #121212;
+}
+
+/* PROJETOS */
+.projetos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #1f1f1f;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    color: #00aaff;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 0.95rem;
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+.card .btn {
+    display: inline-block;
+    margin: 5px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    background: #00aaff;
+    color: #121212;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.card .btn:hover {
+    background: #0088cc;
+}
+
+/* CONTATO */
+.contato p {
+    text-align: center;
+    font-size: 1.1rem;
+    margin: 10px 0;
+}
+
+.contato a {
+    color: #00aaff;
+    text-decoration: none;
+}
+
+.contato a:hover {
+    text-decoration: underline;
+}
+
+/* RODAPÉ */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #1f1f1f;
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .sobre .container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
