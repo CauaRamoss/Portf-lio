@@ -3,93 +3,231 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio Cauã Ramos</title>
+    <title>Cauã Ramos | Desenvolvedor</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Header com menu -->
+    <!-- HEADER -->
     <header>
-        <div class="logo">Portifólio</div>
+        <div class="top-info">
+            <p>📍 Curvelo - MG</p>
+            <p>📧 caua16ramos@gmail.com</p>
+            <p>
+                <a href="https://github.com/CauaRamoss" target="_blank">GitHub</a> |
+                <a href="https://linkedin.com/in/cauãramos1" target="_blank">LinkedIn</a>
+            </p>
+        </div>
+
         <nav>
-            <ul class="nav-links">
-                <li><a href="#sobre">Sobre Mim</a></li>
-                <li><a href="#habilidades">Habilidades</a></li>
-                <li><a href="#projetos">Projetos</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
+            <h2 class="logo">Cauã Ramos</h2>
+            <div class="menu">
+                <a href="#sobre">Sobre</a>
+                <a href="#skills">Skills</a>
+                <a href="#projetos">Projetos</a>
+                <a href="#contato">Contato</a>
+            </div>
         </nav>
     </header>
 
-    <!-- Seção Sobre Mim -->
+    <!-- HERO -->
+    <section class="hero">
+        <h1>Desenvolvedor Front-End</h1>
+        <p>Interfaces modernas, funcionais e focadas em resultado</p>
+    </section>
+
+    <!-- SOBRE -->
     <section id="sobre" class="sobre">
-        <div class="container">
-            <img src="./594 030 006.jpg" alt="Foto de Cauã Ramos" class="foto-perfil">
-            <div class="texto">
-                <h1>Olá, eu sou o Cauã! 🤙</h1>
-                <p>
-                    Atualmente estou estudando Análise e Desenvolvimento de Sistemas e focando meus estudos na área de Desenvolvimento Front-end. Estou sempre buscando melhorar, seja estudando por conta própria ou criando projetos pessoais. <br> <br> Busco minha primeira oportunidade profissional na área, seja como estágio/júnior, para colocar meus conhecimentos em prática e continuar evoluindo. 
-                </p>
-            </div>
-        </div>
+        <h2>Sobre Mim</h2>
+        <p>
+            Sou estudante de Análise e Desenvolvimento de Sistemas e desenvolvedor em formação,
+            com experiência prática em desenvolvimento web, banco de dados e suporte técnico.
+
+            Atuei como Auxiliar de Engenharia na área de energia solar, realizando monitoramento
+            de usinas, simulações técnicas e suporte ao cliente. Também trabalhei como Estagiário
+            de Homologação, analisando e validando dados e imagens comerciais.
+
+            Possuo formação técnica em Eletrotécnica pelo CEFET-MG e atualmente curso ensino superior
+            na Estácio.
+
+            Estou em constante evolução na área de tecnologia e busco uma oportunidade como
+            Desenvolvedor Júnior ou Estagiário, atuando de forma remota ou presencial.
+        </p>
     </section>
 
-    <!-- Seção Habilidades -->
-    <section id="habilidades" class="habilidades">
-        <h2>Minhas Habilidades</h2>
+    <!-- SKILLS -->
+    <section id="skills" class="skills">
+        <h2>Minhas Skills</h2>
+
         <div class="skills-container">
-            <div class="skill">HTML5</div>
-            <div class="skill">CSS3</div>
-            <div class="skill">JavaScript</div>
-            <div class="skill">Python</div>
-            <div class="skill">MySQL</div>
-            <div class="skill">Excel</div>
-            <div class="skill">PowerBI</div>
+
+            <div class="skill-card">
+    <h3>HTML & CSS</h3>
+    <p>Criação de layouts responsivos com Flexbox e Grid</p>
+
+    <button id="btn-htmlcss">Mudar layout</button>
+    <div id="box-htmlcss" class="box"></div>
+</div>
+
+            <div class="skill-card">
+                <h3>JavaScript</h3>
+                <p>Interatividade e manipulação do DOM</p>
+                <button id="btn-skill">Testar JS</button>
+<div id="box-skill"></div>
+            </div>
+
+            <div class="skill-card">
+    <h3>React</h3>
+    <p>Componentização e interfaces dinâmicas</p>
+
+    <button id="btn-react">Mudar estado</button>
+    <div id="box-react" class="box"></div>
+    <p id="react-text">Estado: OFF</p>
+</div>
+
+            <div class="skill-card">
+    <h3>Node.js</h3>
+    <p>Back-end básico e APIs</p>
+
+    <button id="btn-node">Fazer requisição</button>
+    <p id="node-status">Status: aguardando</p>
+</div>
+
+            <div class="skill-card">
+    <h3>Python</h3>
+    <p>Scripts, lógica e automação</p>
+
+    <button id="btn-python">Executar script</button>
+    <p id="python-output">Aguardando execução...</p>
+</div>
+
+            <div class="skill-card">
+    <h3>SQL</h3>
+    <p>Modelagem e consultas em banco de dados</p>
+
+    <button id="btn-sql">Executar Query</button>
+
+    <pre id="sql-query">SELECT * FROM projetos;</pre>
+
+    <div id="sql-result"></div>
+</div>
+
+            <div class="skill-card">
+    <h3>Java (Estudando)</h3>
+    <p>Programação Orientada a Objetos (POO)</p>
+
+    <button id="btn-java">Criar objeto</button>
+    <div id="java-output"></div>
+</div>
+
+    <div class="skill-card">
+    <h3>Git & GitHub</h3>
+    <p>Versionamento de código e colaboração</p>
+
+    <button id="btn-git">Fazer commit</button>
+    <p id="git-output">Nenhuma ação ainda</p>
+</div>
+
         </div>
     </section>
 
-    <!-- Seção Projetos -->
+    <!-- PROJETOS -->
     <section id="projetos" class="projetos">
-        <h2>Alguns dos Meus Projetos</h2>
+        <h2>Projetos</h2>
+
         <div class="projetos-container">
-            <!-- Card Projeto 1 -->
-            <div class="card">
-                <img src="Spotify.png" alt="Spotify">
-                <h3>Spotify</h3>
-                <p>Projeto do Spotify feito na Imersão FrontEnd da Alura!</p>
-                <a href="https://github.com/CauaRamoss/Imersao-Front-End-Alura" target="_blank" class="btn">Ver no GitHub</a>
-                <a href="https://cauaramoss.github.io/Imersao-Front-End-Alura/" target="_blank" class="btn">Ver Online</a>
-            </div>
-            <!-- Card Projeto 2 -->
-            <div class="card">
-                <img src="Furia.png" alt="Perfil-Gamer-FURIA">
-                <h3>Perfil Gamer FURIA</h3>
-                <p>Um projeto feito para saber o perfil gamer de torcedores da FURIA.</p>
-                <a href="https://github.com/CauaRamoss/Perfil-Gamer-FURIA" target="_blank" class="btn">Ver no GitHub</a>
-                <a href="https://cauaramoss.github.io/Perfil-Gamer-FURIA" target="_blank" class="btn">Ver Online</a>
-            </div>
-            <!-- Card Projeto 3 -->
-            <div class="card">
-                <img src="Card Produto.png" alt="Card Preview de Produto">
-                <h3>Card Preview de Produto</h3>
-                <p>Pagina de produto feita em HTML e CSS do site Frontendmentor.</p>
-                <a href="https://github.com/CauaRamoss/Product-preview-card-component" target="_blank" class="btn">Ver no GitHub</a>
-                <a href="https://cauaramoss.github.io/Product-preview-card-component/" target="_blank" class="btn">Ver Online</a>
-            </div>
+
+    <!-- Relógio JS -->
+    <div class="card">
+        <h3>Relógio JS</h3>
+        <p>Relógio digital com JavaScript</p>
+
+        <a href="https://github.com/CauaRamoss/Rel-gio-JS" target="_blank">GitHub</a>
+        <a href="https://cauaramoss.github.io/Rel-gio-JS/" target="_blank">Ver Projeto</a>
+    </div>
+
+    <!-- Samsung S26 Ultra -->
+    <div class="card">
+        <h3>Samsung S26 Ultra</h3>
+        <p>Página de produto moderna e responsiva</p>
+
+        <a href="https://github.com/CauaRamoss/Samsung-S26-Ultra" target="_blank">GitHub</a>
+        <a href="https://cauaramoss.github.io/Samsung-S26-Ultra/" target="_blank">Ver Projeto</a>
+    </div>
+
+    <!-- Netflix Login -->
+    <div class="card">
+        <h3>Netflix Login</h3>
+        <p>Tela de login inspirada na Netflix</p>
+
+        <a href="https://github.com/CauaRamoss/Netflix-Login" target="_blank">GitHub</a>
+        <a href="https://cauaramoss.github.io/Netflix-Login/" target="_blank">Ver Projeto</a>
+    </div>
+
+    <!-- Ninja do Palito -->
+    <div class="card">
+        <h3>Ninja do Palito</h3>
+        <p>Mini jogo desenvolvido com JavaScript</p>
+
+        <a href="https://github.com/CauaRamoss/Ninja-do-Palito" target="_blank">GitHub</a>
+        <a href="https://cauaramoss.github.io/Ninja-do-Palito/" target="_blank">Ver Projeto</a>
+    </div>
+
+    <!-- Spotify Clone -->
+    <div class="card">
+        <h3>Spotify Clone</h3>
+        <p>Interface inspirada no Spotify com foco em UI</p>
+
+        <a href="https://github.com/CauaRamoss/Imersao-Front-End-Alura" target="_blank">GitHub</a>
+        <a href="https://cauaramoss.github.io/Imersao-Front-End-Alura/" target="_blank">Ver Projeto</a>
+    </div>
+
+    <!-- Em breve -->
+    <div class="card future">
+        <h3>Próximo Projeto</h3>
+        <p>Projeto full-stack em desenvolvimento</p>
+    </div>
+
+    <div class="card future">
+        <h3>Próximo Projeto</h3>
+        <p>Nova aplicação chegando em breve</p>
+    </div>
+
+</div>
+
         </div>
     </section>
 
-    <!-- Seção Contato -->
+    <!-- CONTATO -->
     <section id="contato" class="contato">
-        <h2>Entre em Contato Comigo!</h2>
-        <p>Email: <a href="mailto:caua16ramos@gmail.com">caua16ramos@gmail.com</a></p>
-        <p>GitHub: <a href="https://github.com/CauaRamoss" target="_blank">github.com/CauaRamoss</a></p>
-        <p>LinkedIn: <a href="https://linkedin.com/in/cauãramos1" target="_blank">linkedin.com/in/cauãramos1</a></p>
-    </section>
+        <section id="contato" class="contato">
+    <h2>Contatos</h2>
 
-    <!-- Rodapé -->
+    <p>
+        📧 
+        <a href="mailto:caua16ramos@gmail.com">
+            caua16ramos@gmail.com
+        </a>
+    </p>
+
+    <p>
+        💻 
+        <a href="https://github.com/CauaRamoss" target="_blank">
+            GitHub
+        </a>
+    </p>
+
+    <p>
+        🔗 
+        <a href="https://linkedin.com/in/cauãramos1" target="_blank">
+            LinkedIn
+        </a>
+    </p>
+</section>
+
     <footer>
-        <p>© 2025 Cauã Ramos | Todos os direitos reservados.</p>
+        <p>© 2026 Cauã Ramos</p>
     </footer>
 
     <script src="script.js"></script>
