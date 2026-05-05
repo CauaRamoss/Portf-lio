@@ -1,67 +1,212 @@
-// Scroll suave para links do menu
+// =======================
+// SCROLL SUAVE
+// =======================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        target.scrollIntoView({
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
             behavior: 'smooth'
         });
     });
 });
 
-// Botão "Voltar ao topo"
-const backToTop = document.createElement('button');
-backToTop.innerText = '↑';
-backToTop.classList.add('back-to-top');
-document.body.appendChild(backToTop);
 
-// Estilo do botão via JS
-backToTop.style.position = 'fixed';
-backToTop.style.bottom = '20px';
-backToTop.style.right = '20px';
-backToTop.style.padding = '10px 15px';
-backToTop.style.fontSize = '18px';
-backToTop.style.borderRadius = '50%';
-backToTop.style.background = '#00aaff';
-backToTop.style.color = '#121212';
-backToTop.style.border = 'none';
-backToTop.style.cursor = 'pointer';
-backToTop.style.display = 'none';
+// =======================
+// SCROLL REVEAL
+// =======================
+const elements = document.querySelectorAll("section, .card, .skill-card");
 
-// Mostrar/esconder botão ao rolar
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        backToTop.style.display = 'block';
-    } else {
-        backToTop.style.display = 'none';
-    }
-});
+const revealOnScroll = () => {
+    const trigger = window.innerHeight * 0.85;
 
-// Voltar ao topo quando clicar
-backToTop.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
-// Animação ao rolar (fade-in)
-const elements = document.querySelectorAll('.sobre, .habilidades, .projetos, .contato');
-
-const fadeInOnScroll = () => {
-    const triggerBottom = window.innerHeight * 0.8;
     elements.forEach(el => {
-        const elTop = el.getBoundingClientRect().top;
-        if (elTop < triggerBottom) {
-            el.style.opacity = '1';
-            el.style.transform = 'translateY(0)';
+        const top = el.getBoundingClientRect().top;
+
+        if (top < trigger) {
+            // APARECE
+            el.style.opacity = "1";
+            el.style.transform = "translateY(0)";
+        } else {
+            // SOME DE NOVO
+            el.style.opacity = "0";
+            el.style.transform = "translateY(40px)";
         }
     });
 };
 
-// Configuração inicial para os elementos
 elements.forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(50px)';
-    el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+    el.style.opacity = "0";
+    el.style.transform = "translateY(40px)";
+    el.style.transition = "all 0.6s ease";
 });
 
-window.addEventListener('scroll', fadeInOnScroll);
-fadeInOnScroll(); // chamar ao carregar
+window.addEventListener("scroll", revealOnScroll);
+revealOnScroll();
+
+// =======================
+// TYPING EFFECT
+// =======================
+const text = "Desenvolvedor Front-End";
+let index = 0;
+
+const heroTitle = document.querySelector(".hero h1");
+
+if (heroTitle) {
+    heroTitle.innerHTML = "";
+
+    function typeEffect() {
+        if (index < text.length) {
+            heroTitle.innerHTML += text.charAt(index);
+            index++;
+            setTimeout(typeEffect, 80);
+        }
+    }
+
+    typeEffect();
+}
+
+const btnSkill = document.getElementById("btn-skill");
+
+if (btnSkill) {
+    btnSkill.addEventListener("click", () => {
+        const box = document.getElementById("box-skill");
+
+        box.style.transform = "translateX(150px) rotate(360deg)";
+        
+        setTimeout(() => {
+            box.style.transform = "translateX(0)";
+        }, 500);
+        
+    });
+}
+const btnReact = document.getElementById("btn-react");
+let ativo = false;
+
+if (btnReact) {
+    btnReact.addEventListener("click", () => {
+        const box = document.getElementById("box-react");
+        const text = document.getElementById("react-text");
+
+        ativo = !ativo;
+
+        if (ativo) {
+            box.style.background = "#22c55e"; // verde
+            text.textContent = "Estado: ON";
+        } else {
+            box.style.background = "#2563eb"; // azul padrão
+            text.textContent = "Estado: OFF";
+        }
+    });
+}
+
+const btnNode = document.getElementById("btn-node");
+
+if (btnNode) {
+    btnNode.addEventListener("click", () => {
+        const status = document.getElementById("node-status");
+
+        status.textContent = "Status: carregando...";
+
+        setTimeout(() => {
+            status.textContent = "Status: resposta recebida ✔️";
+        }, 1500);
+    });
+}
+
+const btnPython = document.getElementById("btn-python");
+
+if (btnPython) {
+    btnPython.addEventListener("click", () => {
+        const output = document.getElementById("python-output");
+
+        output.textContent = "Executando script...";
+
+        setTimeout(() => {
+            const resultado = Math.floor(Math.random() * 100);
+
+            output.textContent = `Resultado: ${resultado}`;
+        }, 1000);
+    });
+}
+
+const btnSQL = document.getElementById("btn-sql");
+
+if (btnSQL) {
+    btnSQL.addEventListener("click", () => {
+        const result = document.getElementById("sql-result");
+
+        result.innerHTML = "Executando query...";
+
+        setTimeout(() => {
+            result.innerHTML = `
+<table>
+    <tr>
+        <th>Nome</th>
+        <th>Status</th>
+    </tr>
+    <tr>
+        <td>Portfólio</td>
+        <td>Concluído</td>
+    </tr>
+    <tr>
+        <td>API Node</td>
+        <td>Em andamento</td>
+    </tr>
+</table>
+            `;
+        }, 1000);
+    });
+}
+
+const btnJava = document.getElementById("btn-java");
+
+if (btnJava) {
+    btnJava.addEventListener("click", () => {
+
+        // "Classe" simulando Java
+        class Desenvolvedor {
+            constructor(nome, nivel) {
+                this.nome = nome;
+                this.nivel = nivel;
+            }
+
+            apresentar() {
+                return `Nome: ${this.nome} | Nível: ${this.nivel}`;
+            }
+        }
+
+        const dev = new Desenvolvedor("Cauã", "Júnior");
+
+        const output = document.getElementById("java-output");
+
+        output.innerHTML = `
+Objeto criado com sucesso ✔️ <br>
+${dev.apresentar()}
+        `;
+    });
+}
+
+const btnGit = document.getElementById("btn-git");
+
+if (btnGit) {
+    btnGit.addEventListener("click", () => {
+        const output = document.getElementById("git-output");
+
+        output.textContent = "Commit realizado ✔️";
+
+        setTimeout(() => {
+            output.textContent = "Push enviado para o GitHub 🚀";
+        }, 1000);
+    });
+}
+
+const btnHtmlCss = document.getElementById("btn-htmlcss");
+
+if (btnHtmlCss) {
+    btnHtmlCss.addEventListener("click", () => {
+        const box = document.getElementById("box-htmlcss");
+
+        box.classList.toggle("ativo");
+    });
+}
